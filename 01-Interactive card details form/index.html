@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- left-side container -->
+      <div class="left-container">
+        <!-- Image-1 -->
+        <div class="card card-1">
+          <img
+            src="./assets/images/card-logo.svg"
+            alt="company-logo"
+            class="card-logo"
+          />
+          <span class="card-middle-info">9591 6489 6389 101E</span>
+          <div class="card-bottom-info">
+            <span class="ch-name">Felecia Leire</span>
+            <span class="ch-number">09/00</span>
+          </div>
+        </div>
+
+        <!-- Image-2 -->
+        <div class="card card-2">
+          <span class="dots"></span>
+          <span class="dots"></span>
+          <span class="dots"></span>
+        </div>
+      </div>
+
+      <!-- right side container -->
+      <div class="right-container">
+        <!-- Form -->
+        <form class="form" id="form">
+          <div class="form-control" id="form-control">
+            <label for="cc-name">Cardholder Name</label>
+            <input
+              type="text"
+              id="cardholder-name"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <small>Error Message</small>
+          </div>
+
+          <div class="form-control" id="form-control">
+            <label for="cc-number">Cardholder Number</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <small>Error Message</small>
+          </div>
+
+          <div class="row-container">
+            <div class="form-control" id="form-control">
+              <label for="cc-exp">Exp. Date (MM/YY)</label>
+              <div class="row-input">
+                <input type="text" id="card-exp-month" placeholder="MM" />
+                <input type="text" id="card-exp-year" placeholder="YY" />
+              </div>
+              <small>Error Message</small>
+            </div>
+
+            <div class="form-control" id="form-control">
+              <label for="cc-cvc">CVC</label>
+              <input
+                type="text"
+                id="card-cvc"
+                placeholder="e.g. 123"
+                onkeypress="return onlyNumberKey(event)"
+                maxlength="3"
+              />
+              <small>Error Message</small>
+            </div>
+          </div>
+
+          <button type="submit">Confirm</button>
+        </form>
+
+        <!-- Success Page -->
+        <div class="successPage-container">
+          <img
+            src="./assets/images/icon-complete.svg"
+            alt="form-successfully-submitted image"
+          />
+          <h1>Thank You!</h1>
+          <p>We've added your card details.</p>
+          <button>Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

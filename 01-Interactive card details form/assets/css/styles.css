@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+/* global variables */
+:root {
+  --input-border-active: linear-gradient(
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  --input-errors: hsl(0, 100%, 66%);
+  --main-white: hsl(0, 0%, 100%);
+  --light-gray: hsl(270, 3%, 87%);
+  --dark-gray: hsl(279, 6%, 55%);
+  --dark-voilet: hsl(278, 68%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+input,
+label,
+small {
+  font-family: inherit;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.left-container {
+  flex: 30%;
+  background-image: url(../images/bg-main-desktop.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.right-container {
+  flex: 70%;
+  background-color: var(--main-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Image */
+.card {
+  width: 420px;
+  height: 230px;
+  border-radius: 0.7rem;
+  position: absolute;
+  transform: scale(0.9);
+}
+
+.card-1 {
+  background: url(../images/bg-card-front.png) center center no-repeat;
+  left: 30%;
+  top: 10%;
+}
+
+.card-2 {
+  background: url(../images/bg-card-back.png) center center no-repeat;
+  left: 55%;
+  top: 47%;
+}
+
+.card-logo,
+.card-middle-info,
+.card-bottom-info {
+  position: absolute;
+}
+
+.card-logo {
+  top: 10%;
+  left: 9%;
+}
+
+.card-middle-info {
+  width: 80%;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.3rem;
+  color: var(--main-white);
+  text-align: left;
+  letter-spacing: 3px;
+}
+
+.card-bottom-info {
+  bottom: 10%;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-bottom-info > span {
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--main-white);
+}
+
+.card-2 .dots {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid var(--main-white);
+  transform: translate(-50%, -50%);
+}
+
+.card-2 .dots:first-child {
+  right: 23%;
+}
+
+.card-2 .dots:last-child {
+  right: 17%;
+}
+
+/* Form elements */
+form {
+  width: 360px;
+  padding: 20px;
+}
+
+.form-control {
+  margin: 0 0 15px;
+}
+
+input {
+  width: 100%;
+  margin: 5px 0 7px;
+  outline: 0;
+  border: 2px solid var(--light-gray);
+  border-radius: 0.5rem;
+  padding: 0.85rem;
+}
+
+input:focus,
+input:active {
+  border: 2px solid;
+  border-image: var(--input-border-active);
+  border-image-slice: 1;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.94rem;
+  color: var(--dark-voilet);
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: var(--dark-gray);
+}
+
+.row-container,
+.row-input {
+  display: flex;
+}
+
+.row-container {
+  gap: 1.5rem;
+}
+
+.row-input {
+  gap: 0.5rem;
+}
+
+.form-control.error input {
+  border: 1.5px solid var(--input-errors);
+}
+
+.form-control small {
+  visibility: hidden;
+  color: var(--input-errors);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+button {
+  cursor: pointer;
+  background: var(--dark-voilet);
+  padding: 1rem 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  color: var(--light-gray);
+  font-size: 1.4rem;
+}
+
+/* Success Page */
+.successPage-container {
+  width: 400px;
+  text-align: center;
+  display: none;
+}
+
+.successPage-container > * {
+  margin: 2rem 0 0;
+}
+
+.successPage-container h1 {
+  font-size: 3rem;
+}
+
+.successPage-container p {
+  font-size: 1.6rem;
+  color: var(--dark-gray);
+}
+
+.successPage-container button {
+  margin: 3.5rem 0 0;
+}
+
+/* Media queries */
+@media (max-width: 900px) {
+  .card {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card {
+    transform: scale(0.6) translate(-50%, -50%);
+  }
+
+  .card-1 {
+    z-index: 100;
+    top: 60%;
+    left: 15%;
+  }
+
+  .card-2 {
+    top: 20%;
+    left: 40%;
+  }
+}
