@@ -14,5 +14,5 @@ This repository contains challenges from [Frontend Mentors](https://www.frontend
 
 | Name                          | Difficulty    | Technologies / Approaches |
 | ----------------------------- | ------------- | ------------------------- |
-| [Article Preview Component]() | :star:        | HTML, CSS, JS             |
+| [Interactive Card Details Form](https://aakashrao-dev.github.io/Frontend-Mentor-Projects/01-Interactive-card-details-form/index.html) | :star:        | HTML, CSS, JS             |
 | [Notifications page]()        | :star: :star: | HTML, SCSS, JS            |
